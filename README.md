@@ -11,7 +11,7 @@ This project demonstrates modern full-stack development using Next.js, API route
 Deployed on **Vercel**
 
 Live URL:
-(Add your deployed link here after deployment)
+(https://ai-movie-insight-s7sp.vercel.app/)
 
 ---
 
