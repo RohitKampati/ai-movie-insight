@@ -1,36 +1,226 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 AI Movie Insight Builder
 
-## Getting Started
+A full-stack web application that allows users to enter an IMDb movie ID and receive detailed movie information along with AI-based audience sentiment insights.
 
-First, run the development server:
+This project demonstrates modern full-stack development using Next.js, API routes, and a lightweight NLP sentiment analysis engine.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+# 🚀 Live Demo
+
+Deployed on **Vercel**
+
+Live URL:
+(Add your deployed link here after deployment)
+
+---
+
+# 📌 Features
+
+* Search movies using **IMDb ID**
+* Fetch movie details including:
+
+  * Title
+  * Poster
+  * Release year
+  * IMDb rating
+  * Plot summary
+  * Cast list
+* AI-powered **Audience Sentiment Analysis**
+* Sentiment classification:
+
+  * Positive
+  * Mixed
+  * Negative
+* Clean and modern UI
+* Error handling and input validation
+* Responsive design (desktop + mobile)
+
+---
+
+# 🧠 AI Sentiment Analysis
+
+The project implements a **lightweight NLP sentiment engine** that analyzes audience reviews and classifies the overall sentiment.
+
+### How it works
+
+1. Audience reviews are collected (currently simulated sample reviews).
+2. The text is tokenized into words.
+3. Words are compared against **positive and negative lexical dictionaries**.
+4. A sentiment score is calculated.
+5. Based on the score, the system classifies the movie sentiment as:
+
+   * Positive
+   * Mixed
+   * Negative
+
+This approach demonstrates how basic Natural Language Processing can be implemented without relying on external AI APIs.
+
+The architecture allows easy integration with advanced LLM models such as OpenAI or other sentiment analysis APIs in the future.
+
+---
+
+# 🛠 Tech Stack
+
+### Frontend
+
+* Next.js (React framework)
+* TypeScript
+* Tailwind CSS
+
+### Backend
+
+* Next.js API Routes (Node.js)
+
+### APIs
+
+* OMDb API (Movie data)
+
+### AI / NLP
+
+* Custom lexical sentiment analysis engine
+
+### Deployment
+
+* Vercel
+
+### Testing
+
+* Jest (basic unit testing)
+
+---
+
+# 📂 Project Structure
+
+```
+ai-movie-insight
+│
+├── app
+│   ├── api
+│   │   ├── movie
+│   │   │   └── route.ts
+│   │   └── sentiment
+│   │       └── route.ts
+│   │
+│   ├── layout.tsx
+│   └── page.tsx
+│
+├── components
+│   ├── MovieCard.tsx
+│   ├── SearchBar.tsx
+│   ├── SentimentBox.tsx
+│   └── LoadingSpinner.tsx
+│
+├── __tests__
+│   └── movie.test.ts
+│
+├── public
+├── styles
+├── .env.local
+├── package.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# ⚙️ Setup Instructions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1️⃣ Clone the repository
 
-## Learn More
+```
+git clone https://github.com/yourusername/ai-movie-insight.git
+cd ai-movie-insight
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 2️⃣ Install dependencies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+npm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3️⃣ Create environment variables
 
-## Deploy on Vercel
+Create a file named:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+.env.local
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add your OMDb API key:
+
+```
+OMDB_API_KEY=your_api_key_here
+```
+
+You can obtain a free API key from:
+http://www.omdbapi.com/
+
+---
+
+### 4️⃣ Run the development server
+
+```
+npm run dev
+```
+
+Open:
+
+```
+http://localhost:3000
+```
+
+---
+
+# 🧪 Running Tests
+
+Run the test suite using:
+
+```
+npm test
+```
+
+Example test checks API behavior when IMDb ID is missing.
+
+---
+
+# 🛡 Error Handling
+
+The application gracefully handles:
+
+* Invalid IMDb IDs
+* Missing input fields
+* Movie not found
+* API errors
+* Server errors
+
+---
+
+# 📈 Future Improvements
+
+Possible enhancements:
+
+* Fetch real audience reviews from TMDB or IMDb
+* Use advanced AI models (LLMs) for deeper sentiment analysis
+* Add movie recommendations
+* Add charts for sentiment visualization
+* Improve UI animations and design
+
+---
+
+# 📄 Assumptions
+
+* OMDb API is used as the primary movie metadata source.
+* Audience reviews are simulated for demonstration due to API limitations.
+* The NLP sentiment engine provides lightweight analysis suitable for prototype applications.
+
+---
+
+# 👨‍💻 Author
+
+Raghu Naga Rohit Kampati
+
+---
+
+# 📜 License
+
+This project was created for a technical assignment and educational purposes.
